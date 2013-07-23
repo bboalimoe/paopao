@@ -7,7 +7,7 @@ paopao
 --------
 
 1. python 2.7
-2. django 1.4.5
+2. django 1.5.1
 3. MySQLdb 1.2.3
 4. mysql 5.5+
 
