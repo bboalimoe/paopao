@@ -1,29 +1,19 @@
 #!/bin/bash
 
-IP=`curl ifconfig.me`;
-
-git pull;
-
-if [ $? -ne 0 ]
-then
-echo "git pull error!"
-exit 1;
-fi
-
-if [ -e /home/niuben/paopao/Server_IP.txt ]
-then
-echo $IP > /home/niuben/paopao/Server_IP.txt;
-fi
-
-git add Server_IP.txt;
-
-update_time=`date "+%Y-%m-%d %H:%M:%S"`;
-
-git commit Server_IP.txt -m "rebot. update Server IP at $update_time";
-
-git push -u origin master;
+branch_cur=`git branch | grep '*' | awk '{print $2}'`
+echo "branch is $branch_cur"
+git stash
+git checkout ip_realtime
 
 if [ $? -eq 0 ]
 then
-echo "+++++++++++++++++     [ok]";
+curl ifconfig.me -o README.md
+ip=`cat README.md`;
+update_time=`date "+%Y-%m-%d %H:%M:%S"`;
+
+git add README.md;
+git commit -m "wlan IP $ip update at $update_time";
+git push -f origin ip_realtime;
 fi
+git checkout $branch_cur
+git stash pop
