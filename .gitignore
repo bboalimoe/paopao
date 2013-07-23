@@ -1,0 +1,5 @@
+*.swp
+*.pyc
+.ropeproject*
+local_settings.py
+contact/models/local_*.ini
