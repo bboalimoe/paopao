@@ -4,7 +4,9 @@
 from django.shortcuts import render_to_response
 
 
-# from mysite.books.models import Book
+def home(request):
+    return render_to_response('home.html')
+
 
 def hello(request):
     """ get user name of the system and say hello.

@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -12,7 +12,9 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    url(r'', 'service.views.hello', name='home'),
+    # url(r'', 'service.views.hello'),
+    url(r'^$', 'service.views.home'),
+    url(r'^accounts/', include('accounts.urls')),
 )
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
