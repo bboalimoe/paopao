@@ -152,6 +152,10 @@ LOGGING = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+    'accounts.backends.EmailAuthBackend',
+)
+
 try:
     from local_settings import *
     print("use local_settings.py instead of settings.py")

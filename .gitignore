@@ -3,3 +3,4 @@
 .ropeproject*
 local_settings.py
 contact/models/local_*.ini
+db/*.sqlite

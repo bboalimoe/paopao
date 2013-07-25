@@ -49,3 +49,12 @@
   border-color: #cc0000 #cc0000 hsl(0, 100%, 40%);
   color: #fff !important;
 }
+
+.error {
+  margin-right: 20px;
+  color: #f30000;
+  text-align: left;
+  font-size: 14px;
+  display: inline-block;
+  zoom: 1;
+}
