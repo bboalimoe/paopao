@@ -11,6 +11,7 @@
 
 <body>
 
+    <header>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -41,10 +42,37 @@
             </div>
         </div>
     </div>
+    <header>
 
     <div class="container">
     {% block content %}{% endblock %}
     </div>
+
+    <footer>
+    <div class="container">
+        <p class="pull-right">陕ICP备13010124号</p>
+    </div>
+    </footer>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        $(function(){
+                $("#email").focus();
+                $("#sign-form").validate(
+                    { rules:{
+                        email:{required:true,email:true},
+                        username:{required:true,namecheck:true},
+                        userpw:{required:true,rangelength:[5,16]},
+                        reuserpw: {required:true,equalTo:"#userpw"}
+                        },errorPlacement:function(error,element){
+                        element.next().html(error).css("display","block");
+                        }
+                    }
+                );
+        }) ;
+    </script>
 
     <!-- Le javascript
     ================================================== -->
