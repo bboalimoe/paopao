@@ -3,7 +3,7 @@ from django.template import Context, RequestContext
 from django.template.loader import get_template
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from accounts.forms import *
 
 
@@ -16,10 +16,16 @@ def register(request):
                 password=form.cleaned_data['password1'],
                 email=form.cleaned_data['email']
             )
-            return HttpResponseRedirect('/')
+
+            return redirect('/accounts/login')
     else:
         form = RegistrationForm()
     variables = RequestContext(request, {
         'form': form
     })
     return render_to_response('registration/register.html', variables)
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('/')

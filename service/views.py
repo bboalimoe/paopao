@@ -2,17 +2,8 @@
 
 #从django.http模块中导入HttpResponse类[1]
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 def home(request):
-    return render_to_response('home.html')
-
-
-def hello(request):
-    """ get user name of the system and say hello.
-
-    tested under ubuntu 12.04"""
-
-    import commands
-    user = commands.getstatusoutput('echo $USER')[1]
-    return render_to_response('sample.html', {'name': user})
+    return render_to_response('home.html', RequestContext(request))
