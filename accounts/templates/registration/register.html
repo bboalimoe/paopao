@@ -1,86 +1,81 @@
 {% extends "base.html" %}
 {% load bootstrap %}
 {% block content %}
-
 <div class="center_content">
-    <h2>创建您的新账户</h2>
-    <div id="main_content">
-        <div id="sign-form-place">
-            <div class="form-title">
-                <h3>创建账户</h3>
-                <span>或者使用社交账号<a href="/accounts/login/">登录</a></span>
-            </div>
-            <form action="." method="post" class="log-sig-form" id="sign-form">
-                {% csrf_token %}
-    <div>
-     <label>电子邮件：</label>
-   <input type="text" class="input-xlarge " name="email" id="email">
-<span class="help-block ">Example block-level help text here.</span>
- </div>
-      <div>
-   <label>用户名：</label>
-<input type="text" class="input-xlarge" name="username" id="username">
- <span class="help-block ">Example block-level help text here.</span>
-</div>
-   <div>
+  <h2>创建您的新账户</h2>
+  <div id="main_content">
+    <div id="sign-form-place">
+      <div class="form-title">
+        <h3>创建账户</h3>
+        <span>
+          或者使用社交账号
+          <a href="/accounts/login/">登录</a>
+        </span>
+      </div>
+      <form action="." method="post" class="log-sig-form" id="sign-form">
+        {% csrf_token %}
+        <div>
+          <label>电子邮件：</label>
+          {{ form.email }}
+          <span class="help-block ">Example block-level help text here.</span>
+        </div>
+        <div>
+          <label>用户名：</label>
+          {{ form.username }}
+          <span class="help-block ">Example block-level help text here.</span>
+        </div>
+        <div>
+          <label>密码：</label>
+          {{ form.password1 }}
+          <span class=" help-block">Example block-level help text here.</span>
+        </div>
+        <div>
+          <label>重复密码：</label>
+          {{ form.password2 }}
+          <span class="help-block text-error" >Example block-level help text here.</span>
+        </div>
 
-<label>密码：</label>
-
-     <input type="text" class="input-xlarge " name="userpw" id="userpw">
-
-      <span class=" help-block">Example block-level help text here.</span>
-
-   </div>
-
-<div>
-
-     <label>重复密码：</label>
-
-      <input type="text" class="input-xlarge" name="reuserpw" id="reuserpw">
-
-       <span class="help-block text-error" >Example block-level help text here.</span>
-
+        <p>单击注册表示您同意我们的<a href="#" class="text-warning">服务条框</a></p>
+        <button type="submit" class="btn btn-large btn-danger">注册</button>
+      </form>
     </div>
 
- <p>单击注册表示您同意我们的<a href="#" class="text-warning">服务条框</a></p>
+    <div class="sidewelcom visible-desktop">
+      <p>
+        旅行最 <strong>重要</strong>
+        的是遇见不同的人，经历特别的事，从另外的角度观察世界
+      </p>
+      <p>
+        以前，你只能靠 <strong>运气</strong>
+      </p>
+      <p>
+        现在，
+        <strong>脱兔旅行</strong>
+        您发现和预定超凡脱俗的体验
+      </p>
 
-      <button type="submit" class="btn btn-large btn-danger">注册</button>
-
-       </form>
-
-    </div>
-
-     <div class="sidewelcom visible-desktop">
-
-     <p>旅行最<strong>重要</strong>的是遇见不同的人，经历特别的事，从另外的角度观察世界</p>
-
-  <p>以前，你只能靠<strong>运气</strong></p>
-
-       <p>现在，<strong>脱兔旅行</strong>您发现和预定超凡脱俗的体验</p>
-
-    <div id="sample">
-
- <span>骑摩托车游览西安夜景</span>
-
-  <span>到传统家里去，品尝关中家常菜</span>
-
-   <span>结交新朋友，带你逛西安夜市</span>
-
-    <span>感受关中剪纸文化</span>
-
-     <span>和一位西安文艺妹子前往西安最文艺咖啡馆</span>
-
-  </div>
-
-       <p>希望你能<strong>享受</strong>旅程和<strong>体验</strong>不同的价值观</p>
-
-    <p>我们不只是建立一个市场，我们正在建立一个社区</p>
-
- <p>你正在成为社区的<strong>主人</strong></p>
-
-  </div>
-
+      <div id="sample">
+        <span>骑摩托车游览西安夜景</span>
+        <span>到传统家里去，品尝关中家常菜</span>
+        <span>结交新朋友，带你逛西安夜市</span>
+        <span>感受关中剪纸文化</span>
+        <span>和一位西安文艺妹子前往西安最文艺咖啡馆</span>
       </div>
 
+      <p>
+        希望你能
+        <strong>享受</strong>
+        旅程和
+        <strong>体验</strong>
+        不同的价值观
+      </p>
+
+      <p>我们不只是建立一个市场，我们正在建立一个社区</p>
+      <p>
+        你正在成为社区的
+        <strong>主人</strong>
+      </p>
+    </div>
   </div>
+</div>
 {% endblock %}
