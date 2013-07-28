@@ -10,16 +10,13 @@ paopao
     - mysql 5.5+
     - git
     - pip
-
 2. 支持的浏览器
 
     - Chrome
     - Firefox
-
 3. 安装 python 类库
 
     ``` sudo pip install -r requirement.txt```
-
 4. 配置ssh(连接github时无需输入密码)
 
     请参考：[https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
@@ -33,8 +30,7 @@ paopao
     使用"mysql"命令登录mysql，创建数据库，如paopao：
 
     ```mysql>create database paopao;
-       Query OK, 1 row affected (0.00 sec)
-    ```
+       Query OK, 1 row affected (0.00 sec) ```
 
     注意：数据库使用utf-8编码
 
@@ -48,22 +44,20 @@ paopao
 
     - 编辑`local_settings.py`，配置本地数据库：
 
-        ```
-            DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.mysql',  # 数据库类型
-                'NAME': 'paopao',                   # 数据库名称   
-                'USER': 'root',                      # 数据库用户名
-                'PASSWORD': 'myrootpasswd',        # 数据库密码       
-                'HOST': '',                         # 主机名
-                'PORT': '',                         # 端口
-            }
-        }
-        ```
+        ``` DATABASES = {  
+            'default': {  
+                'ENGINE': 'django.db.backends.mysql',  # 数据库类型  
+                'NAME': 'paopao',                   # 数据库名称  
+                'USER': 'root',                      # 数据库用户名  
+                'PASSWORD': 'myrootpasswd',        # 数据库密码  
+                'HOST': '',                         # 主机名  
+                'PORT': '',                         # 端口  
+            }  
+        } ```
 
     - 同步数据库
 
-    `$python manage.py syncdb`
+        `$python manage.py syncdb`
 
 8. 运行项目
 
