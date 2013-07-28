@@ -3,46 +3,72 @@ paopao
 
 跑炮--跑到另一个城市约炮去，是这个节奏么？
 
-开发环境
---------
+1. 开发环境
 
-1. python 2.7
-2. django 1.5.1
-3. MySQLdb 1.2.3
-4. mysql 5.5+
+    - 系统: Ubuntu 12.04(推荐，可使用VirtualBox以虚拟机形式安装)
+    - python 2.7
+    - mysql 5.5+
+    - git
+    - pip
 
-重要说明
---------
+2. 支持的浏览器
 
-1. 对 settings.py 的任何变更，需提前以邮件的形式告知项目组全体成员。
+    - Chrome
+    - Firefox
 
-     对于数据库链接参数等的配置，请使用 local_settings.py 文件。模板见邮件附件。
-2. 请不要把 `local_settings.py` 文件上传至代码库。
-3. ubuntu 下 ./run.sh 可以执行运行 django 环境。
+3. 安装 python 类库
 
-目录说明
---------
+    ``` sudo pip install -r requirement.txt```
 
-1. 全局通用的静态文件（js/img/css）存放在 static 目录下，按文件类型存放。
-2. 暂定 2 个 APP，分别是 service 和 blog。
+4. 配置ssh(连接github时无需输入密码)
 
-    每个 app 的 模板、views 文件、特有的静态文件，放在每个 app 的目录下。
-3. 开发服务器（目前主要托管redmine）的最新ip 存于 real-time-ip，
-    以 git submodule 的形式存在。
-4. url 请统一在根目录下的 urls.py 中定义，后续我们再根据需要做 url 的规划。
+    请参考：[https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
 
+5. 从Github上clone项目
 
-开发环境说明
-------------
+    ``` $git clone git@github.com:JackonYang/paopao.git```
 
-暂时我们使用 github + 本地服务器的方式。
+6. 数据库配置
 
-本地服务器的主要问题在于暂时没有静态IP。
-后面我们托管到阿里云之后，问题就会得到相应的解决。
+    使用"mysql"命令登录mysql，创建数据库，如paopao：
 
-目前的临时解决方案是：
+    ```mysql>create database paopao;
+       Query OK, 1 row affected (0.00 sec)
+    ```
 
-当前的代码库中开一个branch `ip_realtime`，
-服务器上用一个脚本定期的获取外部ip并push到github上。
+    注意：数据库使用utf-8编码
 
-任务管理使用redmine，代码使用github，详细的说明，稍后补充。
+7. 配置Django+MySQL
+
+    - 复制settings.py配置文件：
+
+        ```$cp settings.py local_settings.py```
+
+        注意：`local_settings.py`不允许放到Github上
+
+    - 编辑`local_settings.py`，配置本地数据库：
+
+        ```
+            DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',  # 数据库类型
+                'NAME': 'paopao',                   # 数据库名称   
+                'USER': 'root',                      # 数据库用户名
+                'PASSWORD': 'myrootpasswd',        # 数据库密码       
+                'HOST': '',                         # 主机名
+                'PORT': '',                         # 端口
+            }
+        }
+        ```
+
+    - 同步数据库
+
+    `$python manage.py syncdb`
+
+8. 运行项目
+
+    `$python manage.py runserver <ip:port>`
+
+    如果不填ip和port，默认为`127.0.0.1:8000`
+
+    如果一切正常，通过浏览器访问 “http://<ip:port>/”就可以打开项目网页。
