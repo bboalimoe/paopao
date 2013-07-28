@@ -25,14 +25,14 @@ paopao
 
 6. 数据库配置
 
-    使用"mysql"命令登录mysql，创建数据库，如paopao：
+    - 创建 database
 
-    ```mysql>create database paopao;
-       Query OK, 1 row affected (0.00 sec) ```
+        使用"mysql"命令登录mysql，创建数据库，如paopao：
 
-    注意：数据库使用utf-8编码
+        ```mysql>create database paopao;
+           Query OK, 1 row affected (0.00 sec) ```
 
-7. 配置Django+MySQL
+        注意：数据库使用utf-8编码
     - 复制settings.py配置文件：
 
         ```$cp settings.py local_settings.py```
