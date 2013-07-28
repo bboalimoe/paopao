@@ -4,14 +4,12 @@ paopao
 跑炮--跑到另一个城市约炮去，是这个节奏么？
 
 1. 开发环境
-
     - 系统: Ubuntu 12.04(推荐，可使用VirtualBox以虚拟机形式安装)
     - python 2.7
     - mysql 5.5+
     - git
     - pip
 2. 支持的浏览器
-
     - Chrome
     - Firefox
 3. 安装 python 类库
