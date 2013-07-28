@@ -33,7 +33,6 @@ paopao
     注意：数据库使用utf-8编码
 
 7. 配置Django+MySQL
-
     - 复制settings.py配置文件：
 
         ```$cp settings.py local_settings.py```
@@ -56,7 +55,6 @@ paopao
     - 同步数据库
 
         `$python manage.py syncdb`
-
 8. 运行项目
 
     `$python manage.py runserver <ip:port>`
