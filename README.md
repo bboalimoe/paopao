@@ -38,7 +38,6 @@ paopao
         ```$cp settings.py local_settings.py```
 
         注意：`local_settings.py`不允许放到Github上
-
     - 编辑`local_settings.py`，配置本地数据库：
 
         ``` DATABASES = {  
@@ -51,7 +50,6 @@ paopao
                 'PORT': '',                         # 端口  
             }  
         } ```
-
     - 同步数据库
 
         `$python manage.py syncdb`
