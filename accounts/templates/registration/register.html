@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
+{% block title %}
+<title>脱兔旅行-注册</title>
+{% endblock %}
 {% block content %}
 <div class="center_content">
   <h2>创建您的新账户</h2>
@@ -40,12 +43,12 @@
       </form>
     </div>
 
-    {% include "register_welcome.html" %}
+    {% include "partial_welside.html" %}
   </div>
 </div>
 {% endblock %}
 {% block js %}
-<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
     <script type="text/javascript" src="js/html5.js"></script>
     <![endif]-->
     <script type="text/javascript">
