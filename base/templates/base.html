@@ -15,24 +15,6 @@
     {% include "partial_footer.html" %}
 
     {% include "partial_js.html" %}
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="js/html5.js"></script>
-    <![endif]-->
-    <script type="text/javascript">
-        $(function(){
-                $("#email").focus();
-                $("#sign-form").validate(
-                    { rules:{
-                        email:{required:true,email:true},
-                        username:{required:true,namecheck:true},
-                        userpw:{required:true,rangelength:[5,16]},
-                        reuserpw: {required:true,equalTo:"#userpw"}
-                        },errorPlacement:function(error,element){
-                        element.next().html(error).css("display","block");
-                        }
-                    }
-                );
-        }) ;
-    </script>
+    {% block js %}{% endblock %}
 </body>
 </html>

@@ -108,8 +108,8 @@ $(function(){
                 rules:{
                     email:{required:true,email:true},
                     username:{required:true,namecheck:true},
-                    userpw:{required:true,rangelength:[5,16]},
-                    reuserpw: {required:true,equalTo:"#userpw"}
+                    password1:{required:true,rangelength:[5,16]},
+                    password2: {required:true,equalTo:"#password1"}
                 },errorPlacement:function(error,element){
                 element.next().html(error).css("display","block");
             }

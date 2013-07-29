@@ -117,6 +117,12 @@ footer{
     border: 0px solid#EAEAEA;
     width: 90%;
 }
+.log-sig-form input[type="password"]{
+     background: #EAEAEA;
+    border-radius: 0;
+    border: 0px solid#EAEAEA;
+    width: 90%;
+}
 .sidewelcom{
     float: right;
     width:56% ;

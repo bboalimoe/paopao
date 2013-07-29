@@ -35,7 +35,7 @@
           <span class="help-block text-error" >Example block-level help text here.</span>
         </div>
 
-        <p>单击注册表示您同意我们的<a href="#" class="text-warning">服务条框</a></p>
+        <p>单击注册表示您同意我们的<a href="#" class="text-warning">服务条款</a></p>
         <button type="submit" class="btn btn-large btn-danger">注册</button>
       </form>
     </div>
@@ -43,4 +43,25 @@
     {% include "register_welcome.html" %}
   </div>
 </div>
+{% endblock %}
+{% block js %}
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        $(function(){
+                $("#email").focus();
+                $("#sign-form").validate(
+                    { rules:{
+                        email:{required:true,email:true},
+                        username:{required:true,namecheck:true},
+                        password1:{required:true,rangelength:[5,16]},
+                        password2: {required:true,equalTo:"#id_password1"}
+                        },errorPlacement:function(error,element){
+                        element.next().html(error).css("display","block");
+                        }
+                    }
+                );
+        }) ;
+    </script>
 {% endblock %}
