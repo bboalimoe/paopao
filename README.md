@@ -3,6 +3,10 @@ paopao
 
 跑炮--跑到另一个城市约炮去，是这个节奏么？
 
+
+开发环境部署指南
+----------------
+
 1. 开发环境
     - 系统: Ubuntu 12.04(推荐，可使用VirtualBox以虚拟机形式安装)
     - python 2.7
@@ -59,3 +63,10 @@ paopao
     如果不填ip和port，默认为`127.0.0.1:8000`
 
     如果一切正常，通过浏览器访问 “http://<ip:port>/”就可以打开项目网页。
+
+开发约定
+--------
+
+1. 每次 pull 代码以后，请检查 settings.py, requirement.txt, models 是否有更新。对应的操作为：更新 `local_sttings.py`, pip 安装类库, 更新数据库database。
+2. 数据库配置信息，请不要写入 settings.py 文件。
+3. push 代码时，新增的需手动安装的module，请写入 requirement.txt
