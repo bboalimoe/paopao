@@ -24,7 +24,6 @@ paopao
     ``` $git clone git@github.com:JackonYang/paopao.git```
 
 6. 数据库配置
-
     - 创建 database
 
         使用"mysql"命令登录mysql，创建数据库，如paopao：
