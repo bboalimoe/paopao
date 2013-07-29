@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -64,12 +64,12 @@ MEDIA_URL = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_PATH = os.path.join(os.path.dirname(__file__), 'static')
+# STATIC_PATH = os.path.join(os.path.dirname(__file__), 'static')
 STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'static'),
+    # os.path.join(os.path.dirname(__file__), 'base/static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -103,7 +103,7 @@ ROOT_URLCONF = 'urls'
 
 # absolute paths, not relative paths.
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'service/templates'),
+    os.path.join(os.path.dirname(__file__), 'base/templates'),
     os.path.join(os.path.dirname(__file__), 'accounts/templates'),
 )
 
@@ -118,9 +118,10 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'bootstrapform',
+    'widget_tweaks',
+    # apps created by ourselves
+    'base',
     'accounts',
-    'service',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -1,0 +1,46 @@
+<header>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="/">脱兔旅行</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/about">About</a>
+                        </li>
+                        <li>
+                            <a href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="signin pull-right">
+                    <ul class="nav">
+                        {% if user.is_authenticated %}
+                        <li>
+                            <a class="btn btn-link" href="#">{{ user.username }}</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" href="/accounts/logout">退出</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a class="btn btn-link" href="/accounts/login">登录</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" href="/accounts/register">注册</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
