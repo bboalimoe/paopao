@@ -64,12 +64,12 @@ MEDIA_URL = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-# STATIC_PATH = os.path.join(os.path.dirname(__file__), 'static')
+STATIC_PATH = os.path.join(os.path.dirname(__file__), 'static')
 STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # os.path.join(os.path.dirname(__file__), 'base/static'),
+    os.path.join(os.path.dirname(__file__), 'base/static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
